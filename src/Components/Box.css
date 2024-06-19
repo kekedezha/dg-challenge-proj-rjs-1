@@ -1,0 +1,14 @@
+.color-box {
+    height: 20rem;
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 2px solid;
+    border-radius: 30px;
+}
+
+p {
+    text-align: center;
+    margin: auto;
+}

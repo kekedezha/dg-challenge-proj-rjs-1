@@ -1,6 +1,8 @@
+import './Box.css'
+
 const Box = () => {
     return (
-        <div>
+        <div className="color-box">
             <p>Empty Value</p>
         </div>
     )

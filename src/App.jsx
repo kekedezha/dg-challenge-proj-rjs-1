@@ -7,7 +7,7 @@ function App() {
   // const [inputColor, setInputColor] = useState('')
 
   return (
-    <div className=''>
+    <div >
       <Box />
       <UserInput />
     </div>
