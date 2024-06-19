@@ -1,11 +1,18 @@
-import './Box.css'
+import './Box.css';
+import PropTypes from 'prop-types';
 
-const Box = () => {
+const Box = ({ inputColor }) => {
     return (
-        <div className="color-box">
-            <p>Empty Value</p>
+        <div 
+            className="color-box"
+            style= {{backgroundColor: inputColor}}>
+            <p>{inputColor ? inputColor : 'Empty Value'}</p>
         </div>
     )
+}
+
+Box.propTypes = {
+    inputColor: PropTypes.string.isRequired
 }
 
 export default Box;
