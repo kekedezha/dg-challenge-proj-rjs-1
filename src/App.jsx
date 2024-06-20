@@ -5,15 +5,19 @@ import UserInput from './Components/UserInput'
 
 function App() {
   const [inputColor, setInputColor] = useState('')
-
-  const updateColor = (e) => {
-    setInputColor(e.target.value)
-  }
+  const [hexValue, setHexValue] = useState('');
 
   return (
-    <div>
-      <Box inputColor={inputColor}/>
-      <UserInput inputColor={inputColor} updateColor={updateColor}/>
+    <div className='App'>
+      <Box 
+        inputColor={inputColor}
+        hexValue={hexValue}
+      />
+      <UserInput 
+        inputColor={inputColor} 
+        setInputColor={setInputColor}
+        setHexValue={setHexValue}
+      />
     </div>
   )
 }

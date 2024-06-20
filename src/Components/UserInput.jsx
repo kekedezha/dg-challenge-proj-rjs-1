@@ -1,17 +1,23 @@
 import './UserInput.css'
 import PropTypes from 'prop-types';
+import colorNames from 'colornames';
 
-const UserInput = ({ inputColor, updateColor }) => {
+const UserInput = ({ inputColor, setInputColor, setHexValue }) => {
     return (
-        <form>
+        <form onSubmit={(e) => e.preventDefault()}>
+            <label>Add Color Name:</label>
             <input 
                 autoFocus
                 id="colorToUpdate"
                 type="text"
                 placeholder="Add color name"
+                required
                 value={inputColor}
-                onChange={updateColor}
-                className='form-input-box'>
+                onChange={(e) => {
+                    setInputColor(e.target.value)
+                    setHexValue(colorNames(e.target.value));
+                }}
+            >
             </input>
         </form>
     )
@@ -19,7 +25,8 @@ const UserInput = ({ inputColor, updateColor }) => {
 
 UserInput.propTypes = {
     inputColor: PropTypes.string.isRequired,
-    updateColor: PropTypes.func.isRequired
+    setInputColor: PropTypes.func.isRequired,
+    setHexValue: PropTypes.func.isRequired,
 }
 
 export default UserInput;
